@@ -156,7 +156,7 @@ section {
 
 .list__tools {
   display: flex;
-  gap: 30px;
+  gap: 25px;
 }
 
 .link__tools {
@@ -165,4 +165,68 @@ section {
   height: 50px;
   background-color: rgb(91, 198, 67);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link__tools:hover, .link__tools:focus {
+  background-color: rgb(54, 189, 24);
+}
+
+.item__transaction {
+  display: flex;
+  align-items: center;
+}
+
+.button__transaction {
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(242, 243, 248);
+  border: 2px solid rgb(91, 198, 67);
+  border-radius: 50px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button__transaction:hover, .button__transaction:focus {
+  background-color: rgb(54, 189, 24);
+}
+.button__transaction:hover .svg__icon-coin-euro, .button__transaction:focus .svg__icon-coin-euro {
+  fill: rgb(242, 243, 248);
+}
+
+.svg__icon-coin-euro {
+  width: 22px;
+  height: 22px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.general__information {
+  display: flex;
+  flex-direction: column;
+}
+
+.title__transaction {
+  margin-bottom: 3px;
+  color: rgb(144, 145, 150);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.place__transaction {
+  margin-bottom: 3px;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.company__transaction {
+  margin-bottom: 3px;
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sum__transaction {
+  margin-left: auto;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
 }/*# sourceMappingURL=index.css.map */
