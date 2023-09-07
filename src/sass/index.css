@@ -1,11 +1,54 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+body {
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
 .container {
-  max-width: 375px;
+  max-width: 350px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(242, 243, 248);
 }
 
 @media screen and (min-width: 768px) {
@@ -21,4 +64,105 @@
     padding-left: 100px;
     padding-right: 100px;
   }
+}
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.section__debit {
+  background-color: rgb(242, 243, 248);
+}
+
+.title__debit {
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  color: rgb(144, 145, 150);
+  font-size: 10px;
+}
+
+.amount__debit {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.container__card {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  width: 100%;
+  height: 170px;
+  border-radius: 25px;
+  border: 5px solid white;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/foto-card2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.requisites__card {
+  margin-top: auto;
+}
+
+.number__card {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.date--cvv__card {
+  margin-bottom: 8px;
+}
+
+.date__card {
+  color: rgb(144, 145, 150);
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.cvv__card {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.owner__card {
+  text-transform: uppercase;
+  color: rgb(144, 145, 150);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mastercard__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section__tools {
+  background-color: rgb(242, 243, 248);
+  border-radius: 0 0 30px 30px;
+}
+
+.container__tools {
+  display: flex;
+  justify-content: center;
+}
+
+.list__tools {
+  display: flex;
+  gap: 30px;
+}
+
+.link__tools {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(91, 198, 67);
+  border-radius: 50%;
 }/*# sourceMappingURL=index.css.map */

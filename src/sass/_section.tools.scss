@@ -1,0 +1,26 @@
+.section__tools{
+    background-color: rgb(242, 243, 248);
+    border-radius: 0 0 30px 30px;
+}
+
+.container__tools {
+    display: flex;
+    justify-content: center;
+}
+
+.list__tools {
+    display: flex;
+    gap: 30px;
+}
+
+.item__tools {
+}
+
+.link__tools {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(91, 198, 67);
+    border-radius: 50%;
+
+}

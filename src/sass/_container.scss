@@ -1,10 +1,9 @@
 .container {
-    max-width: 375px;
+    max-width: 350px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(242, 243, 248);
 }
 
 
@@ -24,5 +23,10 @@
         padding-right: 100px;
     }
 
+}
+
+section{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
