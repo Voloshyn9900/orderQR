@@ -1,5 +1,11 @@
 {
-    "myDebit":{
-        "amount": 4000
+  "myDebit": [
+    {
+      "id": 1,
+      "firstName": "Yurii",
+      "lastName": "Voloshyn",
+      "fullName": "Yurii Voloshyn",
+      "amount": 5525.25
     }
+  ]
 }

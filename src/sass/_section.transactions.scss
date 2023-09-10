@@ -13,21 +13,29 @@
     
 }
 
+
 .button__transaction {
     margin-right: 8px;
+    padding: 0;
 
-    width: 40px;
-    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 60px;
+    height: 35px;
     background-color: $color-gray-lite;
     border: 2px solid $color-green-link;
-    border-radius: 50px;
+    border-radius: 10px;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus{
-            background-color: rgb(54, 189, 24);
+        border: 2px solid $color-gray-text;
+        background-color: $color-green-link;
+        color: white;
     }
 
     &:hover .svg__icon-coin-euro,
