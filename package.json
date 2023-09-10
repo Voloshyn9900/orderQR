@@ -5,9 +5,12 @@
   "homepage": "https://Voloshyn9900.github.io/orderQR",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /orderQR/"
+    "build": "parcel build src/*.html --public-url /orderQR/",
+    "serverOrders": "json-server --watch dbOrders.json --port 3030",
+    "serverDebit": "json-server --watch dbDebit.json --port 4040"
   },
   "dependencies": {
+    "json-server": "^0.17.3",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
