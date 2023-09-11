@@ -29,7 +29,7 @@ async function fetchOrdersAndCreateMarkup() {
 function createMarkupOrdres(orders) {
   const markUp = orders
     .map(({ receipt }) => {
-      console.log(receipt.unit.country);
+      // console.log(receipt.unit.country);
       return `<hr />
       <li class="item__transaction">
         <button class="button__transaction">
@@ -42,9 +42,10 @@ function createMarkupOrdres(orders) {
           ${receipt.unit.municipality} 
           ${receipt.unit.postalCode}</p>
           <p class="company__transaction">${receipt.organization.name}</p>
+          <p class="date__transaction">${receipt.createDate}</p>
         </div>
         <div class="sum__transaction">
-          <p class="value__transaction">${receipt.totalPrice} €</p>
+          <p class="value__transaction">-${receipt.totalPrice} €</p>
         </div>
       </li>`;
     })

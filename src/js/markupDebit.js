@@ -29,7 +29,7 @@ async function fetchDebitAndCreateMarkup() {
 
 function createMarkupDebit(myDebit) {
   refs.ownerCard.textContent = myDebit['fullName'];
-  refs.ownerDebit.textContent = myDebit['amount'] + ' EUR';
+  refs.ownerDebit.textContent = myDebit.amount.toFixed(2) + ' EUR';
 }
 
 // const BASE_URL = 'http://localhost:3030';
