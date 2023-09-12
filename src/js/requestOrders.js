@@ -7,3 +7,27 @@ export async function fetchMyOrders() {
   // console.log(orders);
   return orders;
 }
+
+export async function fetchPutMyOrders(newMyOrder) {
+  const url = `${BASE_URL}/orders`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newMyOrder),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const updatedOrder = await response.json();
+    return updatedOrder;
+  } catch (error) {
+    console.error('Произошла ошибка при обновлении дебита:', error);
+    throw error;
+  }
+}

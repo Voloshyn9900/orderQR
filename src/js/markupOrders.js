@@ -10,6 +10,7 @@ fetchOrdersAndCreateMarkup();
 async function fetchOrdersAndCreateMarkup() {
   try {
     const orders = await fetchMyOrders();
+    console.log(orders);
     createMarkupOrdres(orders);
   } catch (error) {
     console.error('Произошла ошибка:', error);

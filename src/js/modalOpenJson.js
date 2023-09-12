@@ -3,7 +3,6 @@ const refs = {
   buttoToolsJsonClose: document.querySelector('.button__put--close'),
   modalJson: document.querySelector('.modal__put--overley'),
 };
-console.log(refs.buttoToolsJsonOpen);
 
 refs.buttoToolsJsonOpen.addEventListener('click', toggleModal);
 refs.buttoToolsJsonClose.addEventListener('click', toggleModal);
