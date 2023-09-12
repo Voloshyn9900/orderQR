@@ -5,7 +5,12 @@
       "firstName": "Yurii",
       "lastName": "Voloshyn",
       "fullName": "Yurii Voloshyn",
-      "amount": 5525.25
+      "amount": 5346.93,
+      "cardNumber": "1234 5678 9012 3456",
+      "expirationDate": "12/25",
+      "cvv": "123",
+      "cardType": "Mastercard",
+      "status": "Active"
     }
   ]
 }

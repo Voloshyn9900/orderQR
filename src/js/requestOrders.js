@@ -8,7 +8,7 @@ export async function fetchMyOrders() {
   return orders;
 }
 
-export async function fetchPutMyOrders(newMyOrder) {
+export async function fetchPostMyOrders(newMyOrder) {
   const url = `${BASE_URL}/orders`;
 
   try {
@@ -27,7 +27,7 @@ export async function fetchPutMyOrders(newMyOrder) {
     const updatedOrder = await response.json();
     return updatedOrder;
   } catch (error) {
-    console.error('Произошла ошибка при обновлении дебита:', error);
+    console.error('Произошла ошибка при обновлении рецептов:', error);
     throw error;
   }
 }

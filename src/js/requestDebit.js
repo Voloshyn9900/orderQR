@@ -13,7 +13,7 @@ export async function fetchPutMyDebit(IdDebit = '1', newMyDebit) {
 
   try {
     const response = await fetch(url, {
-      method: 'PUT',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },

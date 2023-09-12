@@ -14,12 +14,12 @@ async function fetchOrdersAndCreateMarkup() {
     createMarkupOrdres(orders);
   } catch (error) {
     console.error('Произошла ошибка:', error);
-    Notiflix.Report.warning(
+    Notiflix.Report.failure(
       'Warning',
       'Sorry, server dbOrders is not available. Try logging in at a different time or contact your system administrator',
       'Okay',
       {
-        warning: {
+        failure: {
           backOverlayColor: '',
         },
       }
@@ -29,11 +29,10 @@ async function fetchOrdersAndCreateMarkup() {
 
 function createMarkupOrdres(orders) {
   const markUp = orders
-    .map(({ receipt }) => {
-      // console.log(receipt.unit.country);
+    .map(({ receipt, id }) => {
       return `<hr />
       <li class="item__transaction">
-        <button class="button__transaction">
+        <button class="button__transaction" data-order-id=${id}>
           <p class="button__transaction--text">More</p>
           </svg>
         </button>
