@@ -10,10 +10,6 @@ const refs = {
   amountDebit: document.querySelector('.amount__debit'),
 };
 
-console.log(refs.textareaPutJson);
-console.log(refs.buttonPutJson);
-console.log(refs.form);
-
 refs.form.addEventListener('submit', getAndPutNewOrders);
 
 // function getAndPutNewOrders(e) {
@@ -53,7 +49,7 @@ async function getAndPutNewOrders(e) {
     // преобразовать данные в объект JSON
     const jsonData = JSON.parse(jsonInputValue);
     console.log(jsonData);
-    // createMarkupOrdres(jsonData);
+    // createMarkupOrdres(jsonData); // нужно учксть деструктуризацию!!!
     // функция fetchPostMyOrders для отправки данных
     try {
       const updatedOrders = await fetchPostMyOrders(jsonData);
