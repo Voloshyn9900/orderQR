@@ -1,6 +1,8 @@
 import Notiflix, { Notify } from 'notiflix';
 import { fetchMyDebit, fetchPutMyDebit } from './requestDebit';
 import { fetchMyOrders, fetchPostMyOrders } from './requestOrders';
+import { fetchOrdersAndCreateMarkup, createMarkupOrdres } from './markupOrders';
+
 const refs = {
   textareaPutJson: document.querySelector('.textarea__put--json'),
   buttonPutJson: document.querySelector('.button__put--submit'),
@@ -51,7 +53,7 @@ async function getAndPutNewOrders(e) {
     // преобразовать данные в объект JSON
     const jsonData = JSON.parse(jsonInputValue);
     console.log(jsonData);
-
+    // createMarkupOrdres(jsonData);
     // функция fetchPostMyOrders для отправки данных
     try {
       const updatedOrders = await fetchPostMyOrders(jsonData);

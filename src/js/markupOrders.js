@@ -7,7 +7,7 @@ const refs = {
 
 fetchOrdersAndCreateMarkup();
 
-async function fetchOrdersAndCreateMarkup() {
+export async function fetchOrdersAndCreateMarkup() {
   try {
     const orders = await fetchMyOrders();
     console.log(orders);
@@ -27,7 +27,7 @@ async function fetchOrdersAndCreateMarkup() {
   }
 }
 
-function createMarkupOrdres(orders) {
+export function createMarkupOrdres(orders) {
   const markUp = orders
     .map(({ receipt, id }) => {
       return `<hr />
