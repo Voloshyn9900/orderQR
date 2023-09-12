@@ -15,6 +15,7 @@ fetchDebitAndCreateMarkup();
 async function fetchDebitAndCreateMarkup() {
   try {
     const myDebit = await fetchMyDebit('1');
+    console.log(myDebit);
     createMarkupDebit(myDebit);
   } catch (error) {
     console.error('Произошла ошибка:', error);
@@ -31,9 +32,19 @@ async function fetchDebitAndCreateMarkup() {
   }
 }
 
-function createMarkupDebit(myDebit) {
-  refs.ownerCard.textContent = myDebit.fullName;
-  refs.ownerDebit.textContent = myDebit.amount.toFixed(2) + ' EUR';
+function createMarkupDebit({
+  cardType,
+  fullName,
+  amount,
+  cardNumber,
+  expirationDate,
+}) {
+  refs.ownerCard.textContent = fullName;
+  refs.ownerDebit.textContent = amount.toFixed(2) + ' EUR';
+  refs.titleDebit.textContent = cardType + ' debit';
+  refs.numberCard.textContent = cardNumber;
+  refs.dateCard.textContent = expirationDate;
+  refs.cvvCard.textContent = 'cvv';
 }
 
 // const BASE_URL = 'http://localhost:3030';

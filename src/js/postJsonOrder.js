@@ -48,17 +48,17 @@ async function getAndPutNewOrders(e) {
   const jsonInputValue = refs.textareaPutJson.value;
 
   try {
-    // Попытайтесь преобразовать данные в объект JSON
+    // преобразовать данные в объект JSON
     const jsonData = JSON.parse(jsonInputValue);
     console.log(jsonData);
 
-    // Вызовите функцию fetchPostMyOrders для отправки данных
+    // функция fetchPostMyOrders для отправки данных
     try {
       const updatedOrders = await fetchPostMyOrders(jsonData);
       console.log('Данные успешно отправлены и обновлены:', updatedOrders);
       successShow();
 
-      // Получите текущий долг (debit) и значение totalPrice
+      // Вычитаем текущий debit и значение totalPrice
       try {
         const debit = await fetchMyDebit();
         const { amount } = debit;
@@ -66,14 +66,14 @@ async function getAndPutNewOrders(e) {
           receipt: { totalPrice },
         } = jsonData;
 
-        // Вычтите totalPrice из текущего долга и отправьте обновленное значение
+        // Вычитаем totalPrice из debit и отправьте обновленное значение
         const newAmount = amount - totalPrice;
 
         try {
           const updatedDebit = await fetchPutMyDebit('1', {
             amount: newAmount,
           });
-          console.log('Долг успешно обновлен:', updatedDebit);
+          console.log('Дебит успешно обновлен:', updatedDebit);
           refs.amountDebit.textContent = updatedDebit.amount;
         } catch (error) {
           console.error('Произошла ошибка при обновлении дебита:', error);
