@@ -1,7 +1,7 @@
 const refs = {
   openMoreBtn: document.querySelector('.list__transaction'),
   closeMoreBtn: document.querySelector('.button__more--close'),
-  menu: document.querySelector('.menu__more--overley'),
+  menu: document.querySelector('.wrapper__more'),
 };
 
 console.log(refs.openMoreBtn);
@@ -17,4 +17,5 @@ function toggleMenu(e) {
 
   document.body.classList.toggle('modal-open');
   refs.menu.classList.toggle('is-hidden');
+  refs.menu.classList.toggle('wrapper__more--active');
 }

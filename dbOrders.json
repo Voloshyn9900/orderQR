@@ -317,6 +317,324 @@
         "internalReceiptId": "O-8702D0F6939F479982D0F6939FA799B2"
       },
       "id": 3
+    },
+    {
+      "receipt": {
+        "issueDate": "06.09.2023 15:59:58",
+        "icDph": "SK2023008911",
+        "receiptNumber": 569,
+        "taxBaseBasic": null,
+        "taxBaseReduced": 9.34,
+        "totalPrice": 10.27,
+        "freeTaxAmount": null,
+        "receiptId": "O-8702D0F6939F479982D0F6939FA799B2",
+        "items": [
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 7.1,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n739341  Hravé diktáty 7                 ",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -1.07,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  6,03 EUR",
+            "itemType": "Z"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 4.99,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n1651035 Písanka s riekankami - Tlačené p",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -0.75,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  4,24 EUR",
+            "itemType": "Z"
+          }
+        ],
+        "paragon": false,
+        "paragonNumber": null,
+        "pkp": "Y1ZuPHp2329mmYPlqjhCsCXPvlKrKqAg8VI1vbfAgItvjtKcIizhB/3qlumU7ufb0Xjm4+rtgBRcWFpVfHArQeaZ8zm+py0o8bFRqHGRfBVBBYpESh3oGUPsZHW4egD01Kbi0kYs1GTR5tGdJdZ7P2iI8V39Ln5RX4lINdaeNmg6cLePKTpuYtDqg2GrX7jrjHOzwWZ5cgzL7a5U2doMKYP2AJTE3cirdOybWx8PHMwv9r9iO5gaaAOmyhw2D06mDbh31zNIYTegBxiAhYerf32MyRyA2rMmg0s3rGIZ2fGrLqHTS1xor1PpEerRyW+A1hTTZIobd+SrzZuLIy/Ipw==",
+        "vatAmountReduced": 0.93,
+        "customerId": null,
+        "exemption": false,
+        "organization": {
+          "municipality": "Martin",
+          "country": "Slovensko",
+          "postalCode": "03601",
+          "streetName": "Gorkého",
+          "icDph": "SK2023008911",
+          "dic": "2023008911",
+          "ico": "45503249",
+          "propertyRegistrationNumber": "4",
+          "buildingNumber": null,
+          "vatPayer": true,
+          "name": "Martinus, s.r.o."
+        },
+        "vatRateReduced": 10,
+        "type": "PD",
+        "vatRateBasic": null,
+        "cashRegisterCode": "88820230089110009",
+        "invoiceNumber": null,
+        "vatAmountBasic": null,
+        "okp": "fa360521-94a2907a-f97b9bfe-262582a4-9415706d",
+        "unit": {
+          "municipality": "Poprad",
+          "country": "Slovensko",
+          "postalCode": "05801",
+          "cashRegisterCode": "88820230089110009",
+          "streetName": "Námestie sv. Egídia",
+          "propertyRegistrationNumber": "3290",
+          "buildingNumber": "124",
+          "unitType": "STANDARD",
+          "name": null
+        },
+        "ico": "45503249",
+        "createDate": "06.09.2023 15:59:58",
+        "dic": "2023008911"
+      },
+      "returnValue": 0,
+      "searchIdentification": {
+        "createDate": 1694015518834,
+        "searchUuid": "4ff27340-4ccd-11ee-a18c-5b024ea769e5",
+        "bucket": 0,
+        "internalReceiptId": "O-8702D0F6939F479982D0F6939FA799B2"
+      },
+      "id": 4
+    },
+    {
+      "receipt": {
+        "issueDate": "06.09.2023 15:59:58",
+        "icDph": "SK2023008911",
+        "receiptNumber": 569,
+        "taxBaseBasic": null,
+        "taxBaseReduced": 9.34,
+        "totalPrice": 10.27,
+        "freeTaxAmount": null,
+        "receiptId": "O-8702D0F6939F479982D0F6939FA799B2",
+        "items": [
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 7.1,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n739341  Hravé diktáty 7                 ",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -1.07,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  6,03 EUR",
+            "itemType": "Z"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 4.99,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n1651035 Písanka s riekankami - Tlačené p",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -0.75,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  4,24 EUR",
+            "itemType": "Z"
+          }
+        ],
+        "paragon": false,
+        "paragonNumber": null,
+        "pkp": "Y1ZuPHp2329mmYPlqjhCsCXPvlKrKqAg8VI1vbfAgItvjtKcIizhB/3qlumU7ufb0Xjm4+rtgBRcWFpVfHArQeaZ8zm+py0o8bFRqHGRfBVBBYpESh3oGUPsZHW4egD01Kbi0kYs1GTR5tGdJdZ7P2iI8V39Ln5RX4lINdaeNmg6cLePKTpuYtDqg2GrX7jrjHOzwWZ5cgzL7a5U2doMKYP2AJTE3cirdOybWx8PHMwv9r9iO5gaaAOmyhw2D06mDbh31zNIYTegBxiAhYerf32MyRyA2rMmg0s3rGIZ2fGrLqHTS1xor1PpEerRyW+A1hTTZIobd+SrzZuLIy/Ipw==",
+        "vatAmountReduced": 0.93,
+        "customerId": null,
+        "exemption": false,
+        "organization": {
+          "municipality": "Martin",
+          "country": "Slovensko",
+          "postalCode": "03601",
+          "streetName": "Gorkého",
+          "icDph": "SK2023008911",
+          "dic": "2023008911",
+          "ico": "45503249",
+          "propertyRegistrationNumber": "4",
+          "buildingNumber": null,
+          "vatPayer": true,
+          "name": "Martinus, s.r.o."
+        },
+        "vatRateReduced": 10,
+        "type": "PD",
+        "vatRateBasic": null,
+        "cashRegisterCode": "88820230089110009",
+        "invoiceNumber": null,
+        "vatAmountBasic": null,
+        "okp": "fa360521-94a2907a-f97b9bfe-262582a4-9415706d",
+        "unit": {
+          "municipality": "Poprad",
+          "country": "Slovensko",
+          "postalCode": "05801",
+          "cashRegisterCode": "88820230089110009",
+          "streetName": "Námestie sv. Egídia",
+          "propertyRegistrationNumber": "3290",
+          "buildingNumber": "124",
+          "unitType": "STANDARD",
+          "name": null
+        },
+        "ico": "45503249",
+        "createDate": "06.09.2023 15:59:58",
+        "dic": "2023008911"
+      },
+      "returnValue": 0,
+      "searchIdentification": {
+        "createDate": 1694015518834,
+        "searchUuid": "4ff27340-4ccd-11ee-a18c-5b024ea769e5",
+        "bucket": 0,
+        "internalReceiptId": "O-8702D0F6939F479982D0F6939FA799B2"
+      },
+      "id": 5
+    },
+    {
+      "receipt": {
+        "issueDate": "06.09.2023 15:59:58",
+        "icDph": "SK2023008911",
+        "receiptNumber": 569,
+        "taxBaseBasic": null,
+        "taxBaseReduced": 9.34,
+        "totalPrice": 10.27,
+        "freeTaxAmount": null,
+        "receiptId": "O-8702D0F6939F479982D0F6939FA799B2",
+        "items": [
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 7.1,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n739341  Hravé diktáty 7                 ",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -1.07,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  6,03 EUR",
+            "itemType": "Z"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": 4.99,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "                                        \r\n1651035 Písanka s riekankami - Tlačené p",
+            "itemType": "K"
+          },
+          {
+            "sellerIdType": null,
+            "quantity": 1,
+            "vatRate": 10,
+            "price": -0.75,
+            "sellerId": null,
+            "voucherNumber": null,
+            "specialRegulation": null,
+            "name": "ZĽAVA 15% Cena po zľave za kus  4,24 EUR",
+            "itemType": "Z"
+          }
+        ],
+        "paragon": false,
+        "paragonNumber": null,
+        "pkp": "Y1ZuPHp2329mmYPlqjhCsCXPvlKrKqAg8VI1vbfAgItvjtKcIizhB/3qlumU7ufb0Xjm4+rtgBRcWFpVfHArQeaZ8zm+py0o8bFRqHGRfBVBBYpESh3oGUPsZHW4egD01Kbi0kYs1GTR5tGdJdZ7P2iI8V39Ln5RX4lINdaeNmg6cLePKTpuYtDqg2GrX7jrjHOzwWZ5cgzL7a5U2doMKYP2AJTE3cirdOybWx8PHMwv9r9iO5gaaAOmyhw2D06mDbh31zNIYTegBxiAhYerf32MyRyA2rMmg0s3rGIZ2fGrLqHTS1xor1PpEerRyW+A1hTTZIobd+SrzZuLIy/Ipw==",
+        "vatAmountReduced": 0.93,
+        "customerId": null,
+        "exemption": false,
+        "organization": {
+          "municipality": "Martin",
+          "country": "Slovensko",
+          "postalCode": "03601",
+          "streetName": "Gorkého",
+          "icDph": "SK2023008911",
+          "dic": "2023008911",
+          "ico": "45503249",
+          "propertyRegistrationNumber": "4",
+          "buildingNumber": null,
+          "vatPayer": true,
+          "name": "Martinus, s.r.o."
+        },
+        "vatRateReduced": 10,
+        "type": "PD",
+        "vatRateBasic": null,
+        "cashRegisterCode": "88820230089110009",
+        "invoiceNumber": null,
+        "vatAmountBasic": null,
+        "okp": "fa360521-94a2907a-f97b9bfe-262582a4-9415706d",
+        "unit": {
+          "municipality": "Poprad",
+          "country": "Slovensko",
+          "postalCode": "05801",
+          "cashRegisterCode": "88820230089110009",
+          "streetName": "Námestie sv. Egídia",
+          "propertyRegistrationNumber": "3290",
+          "buildingNumber": "124",
+          "unitType": "STANDARD",
+          "name": null
+        },
+        "ico": "45503249",
+        "createDate": "06.09.2023 15:59:58",
+        "dic": "2023008911"
+      },
+      "returnValue": 0,
+      "searchIdentification": {
+        "createDate": 1694015518834,
+        "searchUuid": "4ff27340-4ccd-11ee-a18c-5b024ea769e5",
+        "bucket": 0,
+        "internalReceiptId": "O-8702D0F6939F479982D0F6939FA799B2"
+      },
+      "id": 6
     }
   ]
 }
