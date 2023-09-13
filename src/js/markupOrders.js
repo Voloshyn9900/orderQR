@@ -53,5 +53,3 @@ export function createMarkupOrdres(orders) {
 
   refs.transactionList.insertAdjacentHTML('beforeend', markUp.join(''));
 }
-
-function checkedTypeTransaction(params) {}

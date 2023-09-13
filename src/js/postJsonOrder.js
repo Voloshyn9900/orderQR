@@ -49,7 +49,8 @@ async function getAndPutNewOrders(e) {
     // преобразовать данные в объект JSON
     const jsonData = JSON.parse(jsonInputValue);
     console.log(jsonData);
-    // createMarkupOrdres(jsonData); // нужно учксть деструктуризацию!!!
+    console.log(createMarkupOrdres([jsonData]));
+
     // функция fetchPostMyOrders для отправки данных
     try {
       const updatedOrders = await fetchPostMyOrders(jsonData);
@@ -72,7 +73,8 @@ async function getAndPutNewOrders(e) {
             amount: newAmount,
           });
           console.log('Дебит успешно обновлен:', updatedDebit);
-          refs.amountDebit.textContent = updatedDebit.amount;
+          refs.amountDebit.textContent =
+            updatedDebit.amount.toFixed(2) + ' EUR';
         } catch (error) {
           console.error('Произошла ошибка при обновлении дебита:', error);
           failureShow();
