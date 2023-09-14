@@ -70,13 +70,34 @@
 
 .menu__more {
     width: 100%;
-    min-height: 90%;
-    // max-height: 800px;
+    height: 90%;
     margin-top: 30px;
     // height: 100%;
     margin-bottom: 30px;
     border-radius: 10px;
 
     background-color: white;
-    overflow: scroll;
+    overflow: auto;
+    
+    
+        &::-webkit-scrollbar {
+            width: 5px;
+            // height: 100px;
+            /* Ширина скроллбара */
+            background-color: inherit;
+    
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-green-link;
+            /* Задаем цвет полосы прокрутки */
+            border-radius: 10px;
+    
+        }
+}
+
+.menu__content{
+    padding: 10px;
+    min-height: 500px;
+    max-height: 850px;
 }

@@ -90,7 +90,7 @@ body.modal-open {
 }
 
 .amount__debit {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 16px;
   font-weight: 700;
 }
@@ -193,7 +193,6 @@ body.modal-open {
 }
 .section__transaction::-webkit-scrollbar {
   width: 5px;
-  height: 100px;
   /* Ширина скроллбара */
   background-color: inherit;
 }
@@ -287,11 +286,6 @@ body.modal-open {
 
 .section__modal--put {
   padding: 0;
-  overflow: scroll;
-}
-
-.container__modal--put {
-  overflow: scroll;
 }
 
 .modal__put--overley {
@@ -427,10 +421,26 @@ body.modal-open {
 
 .menu__more {
   width: 100%;
-  min-height: 90%;
+  height: 90%;
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 10px;
   background-color: white;
-  overflow: scroll;
+  overflow: auto;
+}
+.menu__more::-webkit-scrollbar {
+  width: 5px;
+  /* Ширина скроллбара */
+  background-color: inherit;
+}
+.menu__more::-webkit-scrollbar-thumb {
+  background-color: rgb(91, 198, 67);
+  /* Задаем цвет полосы прокрутки */
+  border-radius: 10px;
+}
+
+.menu__content {
+  padding: 10px;
+  min-height: 500px;
+  max-height: 850px;
 }/*# sourceMappingURL=index.css.map */
