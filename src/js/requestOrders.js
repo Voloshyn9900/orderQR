@@ -8,6 +8,13 @@ export async function fetchMyOrders() {
   return orders;
 }
 
+export async function fetchMyOrdersBiId(Id) {
+  const response = await fetch(`${BASE_URL}/orders/${Id}`);
+  const orders = await response.json();
+  // console.log(orders);
+  return orders;
+}
+
 export async function fetchPostMyOrders(newMyOrder) {
   const url = `${BASE_URL}/orders`;
 

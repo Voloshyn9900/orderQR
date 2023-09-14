@@ -32,7 +32,7 @@ export function createMarkupOrdres(orders) {
     .map(({ receipt, id }) => {
       return `<hr />
       <li class="item__transaction">
-        <button class="button__transaction" data-order-id=${id}>
+        <button class="button__transaction" data-order data-order-id=${id}>
           <p class="button__transaction--text">More</p>
           </svg>
         </button>
