@@ -22,9 +22,10 @@ return n}async function eb(e="1",t){let n=`${eg}/myDebit/${e}`;try{let e=await f
 // }
 // console.log('fetchOrders', fetchOrders());
 const ey="http://localhost:3030";async function eC(){let e=await fetch(`${ey}/orders`),t=await e.json();// console.log(orders);
-return t}async function eI(e){let t=`${ey}/orders`;try{let n=await fetch(t,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(!n.ok)throw Error(`HTTP error! Status: ${n.status}`);let i=await n.json();return i}catch(e){throw console.error("Произошла ошибка при обновлении рецептов:",e),e}}const eS={transactionList:document.querySelector(".list__transaction")};function ek(e){let t=e.map(({receipt:e,id:t})=>`<hr />
+return t}async function eI(e){let t=await fetch(`${ey}/orders/${e}`),n=await t.json();// console.log(orders);
+return n}async function eS(e){let t=`${ey}/orders`;try{let n=await fetch(t,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)});if(!n.ok)throw Error(`HTTP error! Status: ${n.status}`);let i=await n.json();return i}catch(e){throw console.error("Произошла ошибка при обновлении рецептов:",e),e}}const ek={transactionList:document.querySelector(".list__transaction")};function eR(e){let t=e.map(({receipt:e,id:t})=>`<hr />
       <li class="item__transaction">
-        <button class="button__transaction" data-order-id=${t}>
+        <button class="button__transaction" data-order data-order-id=${t}>
           <p class="button__transaction--text">More</p>
           </svg>
         </button>
@@ -39,7 +40,7 @@ return t}async function eI(e){let t=`${ey}/orders`;try{let n=await fetch(t,{meth
         <div class="sum__transaction">
           <p class="value__transaction">-${e.totalPrice} €</p>
         </div>
-      </li>`).reverse();eS.transactionList.insertAdjacentHTML("beforeend",t.join(""))}!async function(){try{let e=await eC();console.log(e),ek(e)}catch(t){console.error("Произошла ошибка:",t),/*@__PURE__*/e(e_).Report.failure("Warning","Sorry, server dbOrders is not available. Try logging in at a different time or contact your system administrator","Okay",{failure:{backOverlayColor:""}})}}();// import { fetchMyDebit } from './requestDebit';
+      </li>`).reverse();ek.transactionList.insertAdjacentHTML("beforeend",t.join(""))}!async function(){try{let e=await eC();console.log(e),eR(e)}catch(t){console.error("Произошла ошибка:",t),/*@__PURE__*/e(e_).Report.failure("Warning","Sorry, server dbOrders is not available. Try logging in at a different time or contact your system administrator","Okay",{failure:{backOverlayColor:""}})}}();// import { fetchMyDebit } from './requestDebit';
 // import { fetchMyOrders } from './requestOrders';
 // const refs = {
 //   ownerCard: document.querySelector('.owner__card'),
@@ -98,7 +99,7 @@ return t}async function eI(e){let t=`${ey}/orders`;try{let n=await fetch(t,{meth
 //   //   refs.ownerDebit.textContent = myDebit.amount.toFixed(2) + ' EUR';
 // }
 // main();
-const eR={buttoToolsJsonOpen:document.querySelector(".button__tools--json"),buttoToolsJsonClose:document.querySelector(".button__put--close"),modalJson:document.querySelector(".modal__put--overley")};function eD(){document.body.classList.toggle("modal-open"),eR.modalJson.classList.toggle("is-hidden")}eR.buttoToolsJsonOpen.addEventListener("click",eD),eR.buttoToolsJsonClose.addEventListener("click",eD);const eL={textareaPutJson:document.querySelector(".textarea__put--json"),buttonPutJson:document.querySelector(".button__put--submit"),form:document.querySelector(".form__put--json"),amountDebit:document.querySelector(".amount__debit")};// function getAndPutNewOrders(e) {
+const eD={buttoToolsJsonOpen:document.querySelector(".button__tools--json"),buttoToolsJsonClose:document.querySelector(".button__put--close"),modalJson:document.querySelector(".modal__put--overley")};eD.buttoToolsJsonOpen.addEventListener("click",function(){document.body.classList.toggle("modal-open"),eD.modalJson.classList.toggle("is-hidden")}),eD.buttoToolsJsonClose.addEventListener("click",function(){location.reload()});const eL={textareaPutJson:document.querySelector(".textarea__put--json"),buttonPutJson:document.querySelector(".button__put--submit"),form:document.querySelector(".form__put--json"),amountDebit:document.querySelector(".amount__debit")};// function getAndPutNewOrders(e) {
 //   e.preventDefault();
 //   // Получите данные из текстового поля
 //   const jsonInputValue = refs.textareaPutJson.value;
@@ -124,8 +125,8 @@ const eR={buttoToolsJsonOpen:document.querySelector(".button__tools--json"),butt
 // }
 async function eO(e){e.preventDefault();// Получите данные из текстового поля
 let t=eL.textareaPutJson.value;try{// преобразовать данные в объект JSON
-let e=JSON.parse(t);console.log(e),console.log(ek([e]));// функция fetchPostMyOrders для отправки данных
-try{let t=await eI(e);console.log("Данные успешно отправлены и обновлены:",t),(0,e_.Notify).success("Data sent and updated successfully.",{width:"220px",position:"left-top",success:{background:"#5bc643",textColor:"#fff",notiflixIconColor:"#fff"}});// Вычитаем текущий debit и значение totalPrice
+let e=JSON.parse(t);console.log(e),console.log(eR([e]));// функция fetchPostMyOrders для отправки данных
+try{let t=await eS(e);console.log("Данные успешно отправлены и обновлены:",t),(0,e_.Notify).success("Data sent and updated successfully.",{width:"220px",position:"left-top",success:{background:"#5bc643",textColor:"#fff",notiflixIconColor:"#fff"}});// Вычитаем текущий debit и значение totalPrice
 try{let t=await eA(),{amount:n}=t,{receipt:{totalPrice:i}}=e;try{let e=await eb("1",{amount:n-i});console.log("Дебит успешно обновлен:",e),eL.amountDebit.textContent=e.amount.toFixed(2)+" EUR"}catch(e){console.error("Произошла ошибка при обновлении дебита:",e),ew()}}catch(e){console.error("Произошла ошибка при получении текущего дебита:",e),ew()}}catch(e){console.error("Произошла ошибка при отправке данных:",e),ew()}}catch(e){console.error("Ошибка при разборе данных JSON:",e),ew()}eL.textareaPutJson.value=""}function ew(){(0,e_.Notify).failure("Oops, something went wrong.",{width:"220px",position:"left-top",failure:{background:"#ff5549",textColor:"#fff",notiflixIconColor:"#fff"}})}eL.form.addEventListener("submit",eO);var /** Cheerio default options. */ev={xml:!1,decodeEntities:!0};const eM={_useHtmlParser2:!0,xmlMode:!0};function eP(e){return(null==e?void 0:e.xml)?"boolean"==typeof e.xml?eM:{...eM,...e.xml}:null!=e?e:void 0}var eB={};ep(eB,"html",function(){return nf}),ep(eB,"xml",function(){return np}),ep(eB,"text",function(){return nm}),ep(eB,"parseHTML",function(){return nE}),ep(eB,"root",function(){return nT}),ep(eB,"contains",function(){return nx}),ep(eB,"merge",function(){return ng});var eF={};ep(eF,"isTag",function(){return e3}),ep(eF,"isCDATA",function(){return e6}),ep(eF,"isText",function(){return e8}),ep(eF,"isComment",function(){return e4}),ep(eF,"isDocument",function(){return e7}),ep(eF,"hasChildren",function(){return te});var eU={};ep(eU,"getOuterHTML",function(){return tS}),ep(eU,"getInnerHTML",function(){return tk}),ep(eU,"getText",function(){return function e(t){return Array.isArray(t)?t.map(e).join(""):e3(t)?"br"===t.name?"\n":e(t.children):e6(t)?e(t.children):e8(t)?t.data:""}}),ep(eU,"textContent",function(){return tR}),ep(eU,"innerText",function(){return tD}),/** Type for the root element of a document */(i=v||(v={})).Root="root",/** Type for Text */i.Text="text",/** Type for <? ... ?> */i.Directive="directive",/** Type for <!-- ... --> */i.Comment="comment",/** Type for <script> tags */i.Script="script",/** Type for <style> tags */i.Style="style",/** Type for Any tag */i.Tag="tag",/** Type for <![CDATA[ ... ]]> */i.CDATA="cdata",/** Type for <!doctype ...> */i.Doctype="doctype";const eH=v.Root,eG=v.Text,eq=v.Directive,eW=v.Comment,eY=v.Script,ez=v.Style,eX=v.Tag,eV=v.CDATA,eQ=v.Doctype;class ej{constructor(){/** Parent of the node */this.parent=null,/** Previous sibling */this.prev=null,/** Next sibling */this.next=null,/** The start index of the node. Requires `withStartIndices` on the handler to be `true. */this.startIndex=null,/** The end index of the node. Requires `withEndIndices` on the handler to be `true. */this.endIndex=null}// Read-write aliases for properties
 /**
      * Same as {@link parent}.
@@ -1533,6 +1534,12 @@ f?f.find(h):d)}return(// Add in static methods & properties
 Object.assign(o,eB,{load:e,// `_root` and `_options` are used in static methods.
 _root:a,_options:r,// Add `fn` for plugins
 fn:s.prototype,// Add the prototype here to maintain `instanceof` behavior.
-prototype:s.prototype}),o)});oZ([]);const{contains:o0}=eB,{merge:o1}=eB,{parseHTML:o5}=eB,{root:o2}=eB,o3={openMoreBtn:document.querySelector(".list__transaction"),closeMoreBtn:document.querySelector(".button__more--close"),menu:document.querySelector(".wrapper__more")};function o6(e){"BUTTON"==e.target.nodeName&&(console.dir(e.target.nodeName),document.body.classList.toggle("modal-open"),o3.menu.classList.toggle("is-hidden"),o3.menu.classList.toggle("wrapper__more--active"))}//# sourceMappingURL=index.ba247943.js.map
-console.log(o3.openMoreBtn),console.log(o3.closeMoreBtn),o3.openMoreBtn.addEventListener("click",o6),o3.closeMoreBtn.addEventListener("click",o6);
-//# sourceMappingURL=index.ba247943.js.map
+prototype:s.prototype}),o)});oZ([]);const{contains:o0}=eB,{merge:o1}=eB,{parseHTML:o5}=eB,{root:o2}=eB,o3={openMoreBtn:document.querySelector(".list__transaction"),closeMoreBtn:document.querySelector(".button__more--close"),detailedList:document.querySelector(".detailed__list"),menu:document.querySelector(".wrapper__more")};async function o6(e){try{let t=await eI(e);console.log(t);let{receipt:n}=t,{items:i}=n;console.log(i);let r=i.map(e=>(console.log(e),`<li class="detailed__item">
+              <h2 class="unit__name">${e.name}</h2>
+              <p class="unit__quantity">Quantity ${e.quantity}</p>
+              <p class="unit__price">
+                Price <span data-itemType-K>${e.price} </span>€
+              </p>
+            </li>`)).join("");console.log(r),o3.detailedList.insertAdjacentHTML("beforeend",r)}catch(e){console.error(e)}}o3.openMoreBtn.addEventListener("click",function(e){if("BUTTON"===e.target.nodeName&&null===e.target.getAttribute("data-order-id"))return;let t=e.target.getAttribute("data-order-id");console.log(t),o6(t),document.body.classList.add("modal-open"),o3.menu.classList.add("wrapper__more--active"),o3.menu.classList.remove("is-hidden")}),o3.closeMoreBtn.addEventListener("click",function(e){"BUTTON"===e.target.nodeName&&e.closeMoreBtn||(document.body.classList.remove("modal-open"),o3.menu.classList.add("is-hidden"),o3.menu.classList.remove("wrapper__more--active"))}//# sourceMappingURL=index.f4ac68b6.js.map
+);
+//# sourceMappingURL=index.f4ac68b6.js.map
