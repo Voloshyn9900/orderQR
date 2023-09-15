@@ -3,8 +3,12 @@ import { fetchMyOrdersBiId } from './requestOrders';
 const refs = {
   openMoreBtn: document.querySelector('.list__transaction'),
   closeMoreBtn: document.querySelector('.button__more--close'),
-  detailedList: document.querySelector('.detailed__list'),
   menu: document.querySelector('.wrapper__more'),
+  detailedList: document.querySelector('.detailed__list'),
+  detailedTitle: document.querySelector('.detailed__title'),
+  totalPriceRed: document.querySelector('.unit__totalPrice--red'),
+  totalDiscounGreen: document.querySelector('.unit__totalDiscount--green'),
+  totalSumBlack: document.querySelector('.unit__totalSum--black'),
 };
 
 refs.openMoreBtn.addEventListener('click', openMenu);
@@ -23,7 +27,7 @@ async function fetchAndCreateMarkupDetilesOrder(Id) {
     let totalDiscount = 0;
     // let totalSum = 0;
 
-    const markupPlace = `<h1 class="detailed__title">${receipt.organization.name}</h1>`;
+    refs.detailedTitle.textContent = receipt.organization.name;
 
     const markupUnit = items
       .map(item => {
@@ -51,21 +55,23 @@ async function fetchAndCreateMarkupDetilesOrder(Id) {
       })
       .join('');
 
-    const markupPrice = `
-    <hr />
-    <p class="sum__text">Price <span class="unit__totalPrice--red">${totalPrice.toFixed(
-      2
-    )}</span></p>
-    <p class="sum__text">Discount <span class="unit__totalDiscount--green">${totalDiscount.toFixed(
-      2
-    )}</span></p>
-    <p class="sum__text">Sum <span class="unit__totalSum--black">${(
-      totalPrice + totalDiscount
-    ).toFixed(2)}</span></p><hr />`;
-    console.log(markupPrice);
-    refs.detailedList.insertAdjacentHTML('beforebegin', markupPlace);
+    // const markupPrice = `
+    // <hr />
+    // <p class="sum__text">Price <span class="unit__totalPrice--red">${totalPrice.toFixed(
+    //   2
+    // )}</span></p>
+    // <p class="sum__text">Discount <span class="unit__totalDiscount--green">${totalDiscount.toFixed(
+    //   2
+    // )}</span></p>
+    // <p class="sum__text">Sum <span class="unit__totalSum--black">${(
+    //   totalPrice + totalDiscount
+    // ).toFixed(2)}</span></p><hr />`;
+    // console.log(markupPrice);
+    console.log(totalPrice);
     refs.detailedList.insertAdjacentHTML('afterbegin', markupUnit);
-    refs.detailedList.insertAdjacentHTML('afterend', markupPrice);
+    refs.totalPriceRed.textContent = totalPrice.toFixed(2);
+    refs.totalDiscounGreen.textContent = totalDiscount.toFixed(2);
+    refs.totalSumBlack.textContent = (totalPrice + totalDiscount).toFixed(2);
   } catch (error) {
     console.error(error);
   }
@@ -96,7 +102,4 @@ function closeMenu(e) {
   refs.menu.classList.add('is-hidden');
   refs.menu.classList.remove('wrapper__more--active');
   refs.detailedList.innerHTML = '';
-  refs.detailedList.insertAdjacentHTML('beforebegin', '');
-  refs.detailedList.insertAdjacentHTML('afterbegin', '');
-  refs.detailedList.insertAdjacentHTML('afterend', '');
 }
