@@ -1534,7 +1534,8 @@ f?f.find(h):d)}return(// Add in static methods & properties
 Object.assign(o,eB,{load:e,// `_root` and `_options` are used in static methods.
 _root:a,_options:r,// Add `fn` for plugins
 fn:s.prototype,// Add the prototype here to maintain `instanceof` behavior.
-prototype:s.prototype}),o)});oZ([]);const{contains:o0}=eB,{merge:o1}=eB,{parseHTML:o5}=eB,{root:o2}=eB,o3={openMoreBtn:document.querySelector(".list__transaction"),closeMoreBtn:document.querySelector(".button__more--close"),detailedList:document.querySelector(".detailed__list"),menu:document.querySelector(".wrapper__more")};async function o6(e){try{let t=await eI(e);console.log(t);let{receipt:n}=t,{items:i}=n;console.log(i);let r=0,a=0,s=`<h1 class="detailed__title">${n.organization.name}</h1>`,o=i.map(e=>(console.log(e),"K"===e.itemType)?(r+=e.price,`<li class="detailed__item">
+prototype:s.prototype}),o)});oZ([]);const{contains:o0}=eB,{merge:o1}=eB,{parseHTML:o5}=eB,{root:o2}=eB,o3={openMoreBtn:document.querySelector(".list__transaction"),closeMoreBtn:document.querySelector(".button__more--close"),menu:document.querySelector(".wrapper__more"),detailedList:document.querySelector(".detailed__list"),detailedTitle:document.querySelector(".detailed__title"),totalPriceRed:document.querySelector(".unit__totalPrice--red"),totalDiscounGreen:document.querySelector(".unit__totalDiscount--green"),totalSumBlack:document.querySelector(".unit__totalSum--black")};async function o6(e){try{let t=await eI(e);console.log(t);let{receipt:n}=t,{items:i}=n;console.log(i);let r=0,a=0;// let totalSum = 0;
+o3.detailedTitle.textContent=n.organization.name;let s=i.map(e=>(console.log(e),"K"===e.itemType)?(r+=e.price,`<li class="detailed__item">
                 <h2 class="unit__name">${e.name}</h2>
                 <p class="unit__quantity">Quantity ${e.quantity}</p>
                 <p class="unit__price">
@@ -1546,10 +1547,18 @@ prototype:s.prototype}),o)});oZ([]);const{contains:o0}=eB,{merge:o1}=eB,{parseHT
                 <p class="unit__price">
                   Discount <span data-itemType-Z>${e.price} </span>€
                 </p>
-              </li>`):void 0).join(""),c=`
-    <hr />
-    <p class="sum__text">Price <span class="unit__totalPrice--red">${r.toFixed(2)}</span></p>
-    <p class="sum__text">Discount <span class="unit__totalDiscount--green">${a.toFixed(2)}</span></p>
-    <p class="sum__text">Sum <span class="unit__totalSum--black">${(r+a).toFixed(2)}</span></p><hr />`;console.log(c),o3.detailedList.insertAdjacentHTML("beforebegin",s),o3.detailedList.insertAdjacentHTML("afterbegin",o),o3.detailedList.insertAdjacentHTML("afterend",c)}catch(e){console.error(e)}}o3.openMoreBtn.addEventListener("click",function(e){if("BUTTON"!==e.target.nodeName&&null===e.target.getAttribute("data-order-id"))return;let t=e.target.getAttribute("data-order-id");console.log(t),o6(t),document.body.classList.add("modal-open"),o3.menu.classList.add("wrapper__more--active"),o3.menu.classList.remove("is-hidden")}),o3.closeMoreBtn.addEventListener("click",function(e){"BUTTON"===e.target.nodeName&&e.closeMoreBtn||(document.body.classList.remove("modal-open"),o3.menu.classList.add("is-hidden"),o3.menu.classList.remove("wrapper__more--active"),o3.detailedList.innerHTML="",o3.detailedList.insertAdjacentHTML("beforebegin",""),o3.detailedList.insertAdjacentHTML("afterbegin",""),o3.detailedList.insertAdjacentHTML("afterend",""))}//# sourceMappingURL=index.135e061c.js.map
+              </li>`):void 0).join("");// const markupPrice = `
+// <hr />
+// <p class="sum__text">Price <span class="unit__totalPrice--red">${totalPrice.toFixed(
+//   2
+// )}</span></p>
+// <p class="sum__text">Discount <span class="unit__totalDiscount--green">${totalDiscount.toFixed(
+//   2
+// )}</span></p>
+// <p class="sum__text">Sum <span class="unit__totalSum--black">${(
+//   totalPrice + totalDiscount
+// ).toFixed(2)}</span></p><hr />`;
+// console.log(markupPrice);
+console.log(r),o3.detailedList.insertAdjacentHTML("afterbegin",s),o3.totalPriceRed.textContent=r.toFixed(2),o3.totalDiscounGreen.textContent=a.toFixed(2),o3.totalSumBlack.textContent=(r+a).toFixed(2)}catch(e){console.error(e)}}o3.openMoreBtn.addEventListener("click",function(e){if("BUTTON"!==e.target.nodeName&&null===e.target.getAttribute("data-order-id"))return;let t=e.target.getAttribute("data-order-id");console.log(t),o6(t),document.body.classList.add("modal-open"),o3.menu.classList.add("wrapper__more--active"),o3.menu.classList.remove("is-hidden")}),o3.closeMoreBtn.addEventListener("click",function(e){"BUTTON"===e.target.nodeName&&e.closeMoreBtn||(document.body.classList.remove("modal-open"),o3.menu.classList.add("is-hidden"),o3.menu.classList.remove("wrapper__more--active"),o3.detailedList.innerHTML="")}//# sourceMappingURL=index.ec22c8d9.js.map
 );
-//# sourceMappingURL=index.135e061c.js.map
+//# sourceMappingURL=index.ec22c8d9.js.map
