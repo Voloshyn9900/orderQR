@@ -10,9 +10,7 @@ const refs = {
 refs.openMoreBtn.addEventListener('click', openMenu);
 refs.closeMoreBtn.addEventListener('click', closeMenu);
 
-function createMarkupDetilesOrder(Id) {}
-
-async function fetchAndCheckTransactionType(Id) {
+async function fetchAndCreateMarkupDetilesOrder(Id) {
   try {
     const orderReceipt = await fetchMyOrdersBiId(Id);
     console.log(orderReceipt);
@@ -21,26 +19,53 @@ async function fetchAndCheckTransactionType(Id) {
     const { items } = receipt;
     console.log(items);
 
-    const markup = items
+    let totalPrice = 0;
+    let totalDiscount = 0;
+    // let totalSum = 0;
+
+    const markupPlace = `<h1 class="detailed__title">${receipt.organization.name}</h1>`;
+
+    const markupUnit = items
       .map(item => {
         console.log(item);
 
-        // if () {
-
-        // } else {
-
-        // }
-        return `<li class="detailed__item">
-              <h2 class="unit__name">${item.name}</h2>
-              <p class="unit__quantity">Quantity ${item.quantity}</p>
-              <p class="unit__price">
-                Price <span data-itemType-K>${item.price} </span>€
-              </p>
-            </li>`;
+        if (item.itemType === 'K') {
+          totalPrice = totalPrice + item.price;
+          return `<li class="detailed__item">
+                <h2 class="unit__name">${item.name}</h2>
+                <p class="unit__quantity">Quantity ${item.quantity}</p>
+                <p class="unit__price">
+                  price <span data-itemType-K>${item.price} </span>€
+                </p>
+              </li>`;
+        } else if (item.itemType === 'Z') {
+          totalDiscount = totalDiscount + item.price;
+          return `<li class="detailed__item">
+                <h2 class="unit__name">${item.name}</h2>
+                <p class="unit__quantity">Quantity ${item.quantity}</p>
+                <p class="unit__price">
+                  Discount <span data-itemType-Z>${item.price} </span>€
+                </p>
+              </li>`;
+        }
       })
       .join('');
-    console.log(markup);
-    refs.detailedList.insertAdjacentHTML('beforeend', markup);
+
+    const markupPrice = `
+    <hr />
+    <p class="sum__text">Price <span class="unit__totalPrice--red">${totalPrice.toFixed(
+      2
+    )}</span></p>
+    <p class="sum__text">Discount <span class="unit__totalDiscount--green">${totalDiscount.toFixed(
+      2
+    )}</span></p>
+    <p class="sum__text">Sum <span class="unit__totalSum--black">${(
+      totalPrice + totalDiscount
+    ).toFixed(2)}</span></p><hr />`;
+    console.log(markupPrice);
+    refs.detailedList.insertAdjacentHTML('beforebegin', markupPlace);
+    refs.detailedList.insertAdjacentHTML('afterbegin', markupUnit);
+    refs.detailedList.insertAdjacentHTML('afterend', markupPrice);
   } catch (error) {
     console.error(error);
   }
@@ -48,14 +73,14 @@ async function fetchAndCheckTransactionType(Id) {
 
 function openMenu(e) {
   if (
-    e.target.nodeName === 'BUTTON' &&
+    e.target.nodeName !== 'BUTTON' &&
     e.target.getAttribute('data-order-id') === null
   ) {
     return;
   }
   const orderId = e.target.getAttribute('data-order-id');
   console.log(orderId);
-  fetchAndCheckTransactionType(orderId);
+  fetchAndCreateMarkupDetilesOrder(orderId);
 
   document.body.classList.add('modal-open');
   refs.menu.classList.add('wrapper__more--active');
@@ -70,4 +95,8 @@ function closeMenu(e) {
   document.body.classList.remove('modal-open');
   refs.menu.classList.add('is-hidden');
   refs.menu.classList.remove('wrapper__more--active');
+  refs.detailedList.innerHTML = '';
+  refs.detailedList.insertAdjacentHTML('beforebegin', '');
+  refs.detailedList.insertAdjacentHTML('afterbegin', '');
+  refs.detailedList.insertAdjacentHTML('afterend', '');
 }

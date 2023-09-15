@@ -393,13 +393,33 @@ body.modal-open {
   transform: translateX(0%);
 }
 
+.menu__more {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: auto;
+}
+.menu__more::-webkit-scrollbar {
+  width: 5px;
+  /* Ширина скроллбара */
+  background-color: inherit;
+}
+.menu__more::-webkit-scrollbar-thumb {
+  background-color: rgb(91, 198, 67);
+  /* Задаем цвет полосы прокрутки */
+  border-radius: 10px;
+}
+
 .button__more--close {
   display: flex;
   justify-content: center;
   margin-left: auto;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 15px;
   width: 45px;
   height: 30px;
   border-radius: 6px;
@@ -419,43 +439,16 @@ body.modal-open {
   fill: rgb(242, 243, 248);
 }
 
-.menu__more {
-  width: 100%;
-  height: 90%;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  background-color: white;
-  overflow: auto;
-}
-.menu__more::-webkit-scrollbar {
-  width: 5px;
-  /* Ширина скроллбара */
-  background-color: inherit;
-}
-.menu__more::-webkit-scrollbar-thumb {
-  background-color: rgb(91, 198, 67);
-  /* Задаем цвет полосы прокрутки */
-  border-radius: 10px;
-}
-
-.detailed__order {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  min-height: 500px;
-  max-height: 850px;
-}
-
 .detailed__title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   margin-bottom: 20px;
 }
 
 .detailed__list {
   display: flex;
   flex-direction: column;
+  padding-bottom: 5px;
 }
 
 .detailed__item {
@@ -463,7 +456,7 @@ body.modal-open {
 }
 
 .unit__name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   margin-top: 3px;
 }
@@ -480,6 +473,24 @@ body.modal-open {
   margin-top: 3px;
 }
 
+.unit__totalPrice--red {
+  color: red;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.unit__totalDiscount--green {
+  color: rgb(91, 198, 67);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.unit__totalSum--black {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 [data-itemType-K] {
   color: red;
   font-size: 14px;
@@ -488,4 +499,16 @@ body.modal-open {
 
 [data-itemType-Z] {
   color: rgb(91, 198, 67);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sum__text {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.sum__text:last-child {
+  margin-bottom: 20px;
 }/*# sourceMappingURL=index.css.map */
