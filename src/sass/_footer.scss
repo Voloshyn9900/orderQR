@@ -1,7 +1,9 @@
 .section__footer {
     min-height: 50px;
     background-color: rgb(242, 243, 248);
-
+    padding-bottom: 0;
 }
 
-.container {}
+.container__footer {
+    height: 15px;
+}
